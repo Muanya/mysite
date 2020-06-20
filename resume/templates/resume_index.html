@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{{title}}</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'css/style_template.css' %}">
+
+	 <!--
+  Uncomment to add interactive Google Map to your resume!
+  -->
+<!-- <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+	<div id="template_main">
+		Hello World!
+		<div id="template_header">
+			<ul id="contacts_info" class="flex-box"></ul>
+		</div>
+
+		<div style="clear: both;"></div>
+
+		<div id="template_education">
+			<h2>Education</h2>
+			
+		</div>
+
+		<div id="template_work_exp" class="gray">
+			<h2>Work Experience</h2>
+			
+		</div>
+
+		<div id="template_projects">
+			<h2>Projects</h2>
+			
+		</div>
+
+		<div id="mapDiv">
+			<h2> Where I've Lived and Worked </h2>
+		</div>
+
+		<div id="lets-connect" class="dark_gray">
+			<h2 class="orange center-text">Let's Connect</h2>
+			<ul id="footer_contacts" class="flex-box"></ul>
+		</div>
+	</div>
+
+
+<script src="{%static 'js/jquery.js' %}"></script>
+
+<script src="{%static 'js/helper.js' %}"></script>
+
+<script src="{%static 'js/resume_dynamics.js'%}"></script>
+
+
+<script>
+
+	/*
+	Checking if you have not changed each section of the resume. If you have not made any changes to a section
+  of the resume, then that part of the resume does not show up. 
+	*/
+console.log("I am back!")
+ 
+if(document.getElementsByClassName('flex-item').length === 0){
+	document.getElementById('contacts_info').style.display = 'none';
+}
+	if(document.getElementsByTagName('h1').length === 0){
+	document.getElementById('template_header').style.display = 'none';
+	}
+ 	if(document.getElementsByClassName('work-entry').length === 0) {
+      document.getElementById('template_work_exp').style.display = 'none';
+    }
+	if(document.getElementsByClassName('project-entry').length === 0) {
+      document.getElementById('template_projects').style.display = 'none';
+    }
+    if(document.getElementsByClassName('education-entry').length === 0) {
+      document.getElementById('template_education').style.display = 'none';
+    }
+    if(document.getElementsByClassName('flex-item').length === 0) {
+      document.getElementById('lets-connect').style.display = 'none';
+    }
+    if(document.getElementById('map') === null) {
+      document.getElementById('mapDiv').style.display = 'none';
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block content %}
+	<div class="row">
+		<div class="col-md-4 offset-md-4">
+		<div class="card mb-2">
+	<div class="card-body">
+		<form action="{%url 'question_index' %}" method="post">
+			{% csrf_token %}
+  <div class="form-group">
+
+  	<label for="nameID"> Name  </label>
+    <input type="text" class="form-control" id="nameID" placeholder="Your Name", name="name">
+  </div>
+
+    <label for="emailID"> Email address  </label>
+    <input type="email" class="form-control" id="emailID" placeholder="name@example.com" name="email">
+  </div>
+
+  <div class="form-group">
+    <label for="messageID"> Question </label>
+    <textarea class="form-control" id="messageID" rows="3" name="message"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  {{msg}}
+</form>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

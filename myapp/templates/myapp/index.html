@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block content %}
+	<div class="row">
+		<div class="col-md-4 offset-md-4">
+		<div class="card mb-2">
+	<img src="{% static 'img/logoo.jpg' %}" alt="logo" class="card-img-top" />
+	<div class="card-body">
+	<h1>Hello World!</h1>
+	<p class="card-text">{{description}}</p>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
+

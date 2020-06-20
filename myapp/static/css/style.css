@@ -1,0 +1,31 @@
+body {
+  font-family: proxima-nova, sans-serif;
+  text-align: center;
+  background: #e1eaf5;
+}
+
+h1 {
+  font-family: proxima-nova, sans-serif;
+  text-transform: uppercase;
+  color: #5f6988;
+  margin: 20px 0 10px;
+  font-size: 1.5em;
+}
+
+p {
+  color: #5f6988;
+  margin: 0;
+}
+
+.logo {
+  width:150px;
+}
+
+
+@media(max-width:600px) {
+  .card {
+    width: 90%;
+  }
+}
+
+
