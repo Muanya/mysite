@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+<div class="col-md-8 offset-md-2">
+	{% if error_message %}
+	{{ error_message }}
+	{%endif%}
+	<h1> ASK A QUESTION</h1>
+	
+	<form action="{%url 'question_ask' %}" method="POST">
+		{% csrf_token %}
+		<div class="form-group">
+			{{ form.name }}
+
+		</div>
+		<div class="form-group">
+			{{ form.email }}
+
+		</div>
+
+		<div class="form-group">
+			{{ form.ques }}
+
+		</div>
+		<div class="form-group">
+			{{ form.ques_description }}
+
+		</div>
+		<div class="container">
+		Would you like to be notified when answers are given: &nbsp; {{form.notify}}
+	</div>
+<div>
+	<button class="btn"> Submit </button>
+</div>
+		
+	</form>
+		
+</div>
+
+{% endblock %}

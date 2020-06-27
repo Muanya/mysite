@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+<div class="col-md-8 offset-md-2">
+	{% if error_message %}
+	{{ error_message }}
+	{%endif%}
+	<h1>Question Index</h1>
+	<div class="container">
+		{% for q in questions %}
+		<h2> <a href="{%url 'answer_index' q.pk q.ques_slug%}">{{q.ques}}</a> </h2>
+		<p>{{q.message  | slice:":100"}}</p>
+		<br><br>
+		{% endfor%}
+		</div>
+		
+		<a href="{%url 'question_ask'  %}"> Have a question? </a>
+</div>
+
+{% endblock %}

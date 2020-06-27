@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+<div class="col-md-8 offset-md-2">
+	<b> {{question}} </b>
+	<br>	
+	<p>{{ques_description}}</p>
+	<br><br>
+	{% if the_answers %}
+	<h2>Answers: </h2>
+	{% for ans in the_answers%}
+
+	<div class="container">
+		<p> {{ans.the_answer}} </p>
+		<div> By: {{ans.author}} &nbsp; <small> Votes: {{ans.votes}}</small> </div>
+	</div>
+	<br>
+	{%endfor%}
+	{% else %}
+	<div>No Answer Given </div>
+	{%endif%}
+	<h1>Give Your Answer</h1>
+	
+	<form method="POST">
+		{% csrf_token %}
+		<div class="form-group">
+			{{ form.author }}
+
+		</div>
+		
+		<div class="form-group">
+			{{ form.the_answer }}
+
+		</div>
+
+		<div>
+			<button class="btn"> Submit </button>
+
+		</div>
+		<br>
+		{%if success_msg %}
+		{{success_msg}}
+		{%endif%}
+	</form>
+		
+</div>
+
+{% endblock %}
